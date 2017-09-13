@@ -1,4 +1,8 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
+const hub = require('hub')
+const NodeCache = require('node-cache')
 
-module.exports = app;
+hub.db = new NodeCache()
+
+module.exports = app
