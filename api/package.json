@@ -1,0 +1,19 @@
+{
+  "name": "shorter-url-api",
+  "version": "0.0.1",
+  "description": "This is an API to convert URLs in short URL.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo Morais <morais.rm@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "jest": "^21.0.2",
+    "nodemon": "^1.12.0"
+  }
+}
