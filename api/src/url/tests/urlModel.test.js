@@ -1,10 +1,8 @@
 const urlModel = require( '../urlModel')
+
 jest.mock('hub')
+
 describe('urlModel', () => {
-
-
-
-
   describe('when does not have urls',() => {
     const hub = require('hub');
 

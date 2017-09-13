@@ -5,4 +5,7 @@ const NodeCache = require('node-cache')
 
 hub.db = new NodeCache()
 
+const urlController = require('./src/url/urlController')
+app.use(urlController)
+
 module.exports = app
