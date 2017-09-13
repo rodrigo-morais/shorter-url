@@ -5,12 +5,30 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test jest --coverage"
   },
   "author": "Rodrigo Morais <morais.rm@gmail.com>",
   "license": "MIT",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js}",
+      "!src/app.js",
+      "!src/server.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 50,
+        "branches": 50,
+        "functions": 50,
+        "lines": 50
+      }
+    }
+  },
   "dependencies": {
-    "express": "^4.15.4"
+    "bitly": "^4.1.1",
+    "express": "^4.15.4",
+    "short-url": "0.0.1",
+    "shorturl": "git+https://github.com/jdub/node-shorturl.git"
   },
   "devDependencies": {
     "jest": "^21.0.2",
