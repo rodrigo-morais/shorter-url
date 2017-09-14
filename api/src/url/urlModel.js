@@ -2,4 +2,6 @@ const hub = require('hub');
 
 const findAll = () => hub.db.get('urls') || []
 
-module.exports = { findAll }
+const create = (url) => hub.db.set('urls', [...findAll(), url])
+
+module.exports = { findAll, create }
