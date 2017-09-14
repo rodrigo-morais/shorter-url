@@ -1,10 +1,10 @@
 {
-  "name": "flow-engine",
+  "name": "shorter-urls",
   "version": "0.0.1",
   "description": "A flow engine is an application that executes a flow consisting of several linked rules, in this case against some incoming data",
   "repository": {
     "type": "git",
-    "url": "git://github.com/rodrigo-morais/flow-engine.git"
+    "url": "git://github.com/rodrigo-morais/shorter-urls.git"
   },
   "engines": {
     "npm": ">=3",
@@ -37,7 +37,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
-    "pretest": "npm run test:clean && npm run lint",
+    "pretest": "npm run test:clean",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
@@ -161,7 +161,7 @@
     }
   },
   "dllPlugin": {
-    "path": "node_modules/flow-engine-dlls",
+    "path": "node_modules/shorter-urls-dlls",
     "exclude": [
       "chalk",
       "compression",
@@ -178,19 +178,29 @@
     ]
   },
   "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ],
     "collectCoverageFrom": [
       "app/**/*.{js,jsx}",
       "!app/**/*.test.{js,jsx}",
       "!app/*/RbGenerated*/*.{js,jsx}",
       "!app/app.js",
-      "!app/routes.js"
+      "!app/routes.js",
+      "!app/components/shared/**/*.js",
+      "!app/components/ShorterUrl/messages.js",
+      "!app/containers/ShorterUrlPage/index.js",
+      "!app/containers/ShorterUrlPage/messages.js",
+      "!app/utils/asyncInjectors.js",
+      "!app/global-styles.js"
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 98,
-        "branches": 91,
-        "functions": 98,
-        "lines": 98
+        "statements": 50,
+        "branches": 50,
+        "functions": 50,
+        "lines": 50
       }
     },
     "moduleDirectories": [
@@ -270,6 +280,7 @@
     "image-webpack-loader": "2.0.0",
     "imports-loader": "0.6.5",
     "jest-cli": "18.0.0",
+    "jest-fetch-mock": "^1.2.1",
     "lint-staged": "3.2.1",
     "ngrok": "2.2.4",
     "node-plop": "0.5.4",
@@ -278,6 +289,7 @@
     "plop": "1.7.3",
     "pre-commit": "1.1.3",
     "react-addons-test-utils": "15.4.1",
+    "react-test-renderer": "^15.6.1",
     "rimraf": "2.5.4",
     "shelljs": "^0.7.5",
     "sinon": "2.0.0-pre",

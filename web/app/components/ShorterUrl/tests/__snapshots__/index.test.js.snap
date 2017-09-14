@@ -1,0 +1,41 @@
+exports[`<ShorterUrl /> renders according to design 1`] = `
+<div>
+  <h1
+    className="ccoFJN">
+    <span>
+      ShorterUrl
+    </span>
+  </h1>
+  <table
+    className="cmoJIt">
+    <thead
+      className="foqgVb">
+      <tr
+        className="foqgVb">
+        <th
+          className="dihJkC">
+          URL
+        </th>
+        <th
+          className="dihJkC">
+          Short URL
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="foqgVb">
+      <tr
+        className="foqgVb">
+        <td
+          className="ePQBtB">
+          http://www.google.com
+        </td>
+        <td
+          className="ePQBtB">
+          http:/goo.gl
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
