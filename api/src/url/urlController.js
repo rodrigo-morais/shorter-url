@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   const urls = urlModel.findAll()
 
   urls ?
-    res.status(200).send(urls) :
+    res.status(200).json(urls) :
     res.status(500).send('There was a problem finding the users.')
 })
 
