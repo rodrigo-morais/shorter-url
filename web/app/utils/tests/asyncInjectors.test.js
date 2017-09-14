@@ -25,10 +25,6 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-function* testSaga() {
-  yield put({ type: 'TEST', payload: 'yup' });
-}
-
 describe('asyncInjectors', () => {
   let store;
 

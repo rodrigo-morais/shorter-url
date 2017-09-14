@@ -5,4 +5,10 @@ export default defineMessages({
     id: 'app.components.ShorterUrlPage.header',
     defaultMessage: 'ShorterUrl',
   },
+  form: {
+    submit: {
+      id: 'app.components.ShorterUrlPage.form.submit',
+      defaultMessage: 'Convert',
+    },
+  },
 });

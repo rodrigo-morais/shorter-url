@@ -2,7 +2,7 @@ const resolve = require('path').resolve;
 const pullAll = require('lodash/pullAll');
 const uniq = require('lodash/uniq');
 
-const FlowEngine = {
+const ShorterURLs = {
   // This refers to the react-boilerplate version this project is based on.
   version: '3.4.0',
 
@@ -42,8 +42,8 @@ const FlowEngine = {
 
     entry(pkg) {
       const dependencyNames = Object.keys(pkg.dependencies);
-      const exclude = pkg.dllPlugin.exclude || ReactBoilerplate.dllPlugin.defaults.exclude;
-      const include = pkg.dllPlugin.include || ReactBoilerplate.dllPlugin.defaults.include;
+      const exclude = pkg.dllPlugin.exclude || ShorterURLs.dllPlugin.defaults.exclude;
+      const include = pkg.dllPlugin.include || ShorterURLs.dllPlugin.defaults.include;
       const includeDependencies = uniq(dependencyNames.concat(include));
 
       return {
@@ -53,4 +53,4 @@ const FlowEngine = {
   },
 };
 
-module.exports = FlowEngine;
+module.exports = ShorterURLs;

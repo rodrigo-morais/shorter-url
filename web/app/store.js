@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 import createReducer from './reducers';
 
 import { getUrls } from './containers/ShorterUrlPage/actionsCreator';
@@ -9,7 +9,7 @@ import { getUrls } from './containers/ShorterUrlPage/actionsCreator';
 export default function configureStore(initialState = {}, history) {
   const middlewares = [
     routerMiddleware(history),
-    thunk
+    thunk,
   ];
 
   const enhancers = [
@@ -31,7 +31,7 @@ export default function configureStore(initialState = {}, history) {
 
   store.asyncReducers = {}; // Async reducer registry
 
-  store.dispatch(getUrls())
+  store.dispatch(getUrls());
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {

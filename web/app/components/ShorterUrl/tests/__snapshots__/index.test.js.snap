@@ -6,6 +6,24 @@ exports[`<ShorterUrl /> renders according to design 1`] = `
       ShorterUrl
     </span>
   </h1>
+  <form
+    className="eQdiUA"
+    onSubmit={[Function]}>
+    <fieldset
+      className="gDzNqM">
+      <input
+        className="mBQoT"
+        type="text" />
+      <button
+        className="fkphIJ"
+        type="submit">
+        <span>
+          Convert
+        </span>
+      </button>
+    </fieldset>
+  </form>
+  <hr />
   <table
     className="cmoJIt">
     <thead
