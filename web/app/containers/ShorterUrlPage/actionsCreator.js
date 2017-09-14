@@ -13,9 +13,15 @@ const getUrls = () => (dispatch) => {
 };
 
 const postUrl = (url) => (dispatch) => {
+  const body = JSON.stringify({ url });
+
   fetch('http://localhost:8888/', {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
     method: 'POST',
-    body: url,
+    body,
   })
     .then((res) => res.json())
     .then((newUrl) =>
